@@ -335,3 +335,139 @@ random() */
 
 
 
+// ----------------------------------------------------------------------------------------------------------------------------------
+/*
+12) Programa una función que determine si un número es primo (aquel que solo es divisible por sí mismo y 1) o no, pe. miFuncion(7) devolverá true.
+13) Programa una función que determine si un número es par o impar, pe. miFuncion(29) devolverá Impar.
+14) Programa una función para convertir grados Celsius a Fahrenheit y viceversa, pe. miFuncion(0,"C") devolverá 32°F.
+*/
+
+// 12 ----------------------------------------------------------------------------------------------------------------------------------
+/* const esPrimo = (num) => {
+
+    let x = 1
+    let count = 0
+
+    if (!num) return console.warn("Debes ingresas un numero entero positivo")
+    if (num === undefined) return console.warn("Debes ingresas un numero")
+    if (typeof num !== 'number') return console.warn("No puedes ingresar otro tipo de dato")
+    while (x <= num) {
+        if (num % x === 0) {
+            count++
+        }
+        x++
+    }
+
+    return count === 2
+        ? console.log(`El nuumero ${num} es PRIMO`)
+        : console.log(`El nuumero ${num} NO es PRIMO`)
+} */
+
+
+
+
+
+
+/* const numeroPrimo = (numero = undefined) => {
+    if (numero === undefined) return console.warn("No ingresaste un número");
+
+    if (typeof numero !== 'number') return console.error("Debes ingresar un numero")
+
+    if (numero === 0) return console.error("no puedes ingresar 0")
+    if (numero === 1) return console.error("no puedes ingresar 1")
+
+    if (Math.sign(numero) === -1) return console.error("No puedes ingresar un número negativo")
+
+    let divisible = false;
+
+    for (let i = 2; i < numero; i++) {
+        if (numero % i === 0) {
+            divisible = true;
+            break;
+        }
+    }
+    return (divisible)
+        ? console.log(`El numero ${numero} No es primo`)
+        : console.log(`El numero ${numero} es primo`)
+} */
+
+
+
+
+
+
+
+
+// 13 ----------------------------------------------------------------------------------------------------------------------------------
+
+/* const esPar = (num) => {
+    if (num === undefined) return console.warn("Debes ingresas un numero")
+    if (typeof num !== 'number') return console.warn("No puedes ingresar otro tipo de dato")
+
+    if (num % 2 === 0) {
+        return console.log(`El número ${num} es PAR`)
+    } else {
+        return console.log(`El número ${num} es IMPAR`)
+    }
+} */
+
+
+
+/* const numeroParImpar = (numero) => {
+    if (numero === undefined) return console.warn("Debes ingresas un numero")
+    if (typeof numero !== 'number') return console.warn("No puedes ingresar otro tipo de dato")
+
+
+    return (numero % 2 === 0)
+        ? console.log(`El numero ${numero} es PAR`)
+        : console.log(`El numero ${numero} es IMPAR`)
+}
+
+numeroParImpar(-398) */
+
+
+
+
+
+
+
+
+// 14 ----------------------------------------------------------------------------------------------------------------------------------
+/* const convertirGrados = (n, g) => {
+    g = g.toLowerCase()
+
+    if (n === undefined) return console.warn("Debe introducir un numero de grado")
+    if (typeof n !== 'number') return console.warn("Debe introducir un numero")
+    if (g === undefined) return console.warn("Debe introducir el tipo de grado Celsius o Fahrenheit")
+    if (typeof g !== 'string') return console.warn("Debe introducir 'C' para grados Celsius o 'F' para Fahrenheit")
+    if (g !== 'c' && g !== 'f') return console.warn("Grado no valido")
+
+    if (g === 'c') {
+        let fahrenheit = (n * 9 / 5) + 32
+        return console.log(`${n} grados Celsius son ${fahrenheit} grados Fahrenheit`);
+    } else {
+        let celsius = (n - 32) * 5 / 9
+        return console.log(`${n} grados Fahrenheit son ${celsius} grados Celsius`);
+    }
+}
+convertirGrados(0, 'F') */
+
+
+/* const convertirGrados = (grados = undefined, unidad = undefined) => {
+    if (grados === undefined) return console.warn("No ingresaste grados a convertir")
+    if (typeof grados !== 'number') return console.warn(`El valor ${grados} NO es un numero`)
+    if (typeof unidad !== 'string') return console.warn(`El valor ${unidad} ingresado No es una cadena de texto`)
+    if (unidad.length !== 1 || !/C|F/.test(unidad)) return console.warn('Valor de unidad no reconocido')
+
+
+    if (unidad === 'C') {
+        return console.info(`${grados}°C = ${Math.round((grados * (9 / 5)) + 32)}°F`)
+    } else if (unidad === 'F') {
+        return console.info(`${grados}°F = ${Math.round((grados - 32) * (5 / 9))}°C`)
+    }
+} */
+
+
+
+
+
