@@ -203,11 +203,135 @@ deletePattern("xyz1, xyz2, xyz3, xyz4, xyz5", "xyz") */
 
 
 
-const deletePattern = (text = "", pattern = "") => {
+/* const deletePattern = (text = "", pattern = "") => {
     !text
         ? console.warn("Ingresa una cadena")
         : !pattern
             ? console.warn("No ingresaste el patrón")
             : console.log(text.replace(new RegExp(pattern, "ig"), ''));
 }
-deletePattern("xyz1, xyz2, xyz3", "xyz")
+deletePattern("xyz1, xyz2, xyz3", "xyz") */
+
+
+
+
+
+//  ----------------------------------------------------------------------------------------------------------------------------------
+
+/*
+9) Programa una función que obtenga un numero aleatorio entre 501 y 600.
+10) Programa una función que reciba un número y evalúe si es capicúa o no (que se lee igual en un sentido que en otro), pe. miFuncion(2002) devolverá true.
+11) Programa una función que calcule el factorial de un número (El factorial de un entero positivo n, se define como el producto de todos los números enteros positivos desde 1 hasta n), pe. miFuncion(5) devolverá 120.
+*/
+
+// 9 ----------------------------------------------------------------------------------------------------------------------------------
+/* const random = () => {
+    let randomNumber = Math.round(Math.random() * 100) + 500;
+    return console.log(randomNumber);
+}
+random() */
+
+
+
+/* const random = () => console.log(Math.round(Math.random() * 100) + 500)
+random() */
+
+
+
+
+
+
+
+
+
+// 10 ----------------------------------------------------------------------------------------------------------------------------------
+
+/* const capicuaNumb = (numb) => {
+    let strNumb = String(numb)
+    let reverse = strNumb.split("").reverse().join("")
+
+
+    if (typeof numb !== 'number' || numb === undefined) {
+        console.warn("Ingresa un tipo de dato numerico");
+    } else {
+        strNumb === reverse
+            ? console.log(`El numero ${numb} es CAPICUA`)
+            : console.log(`El numero ${numb} NO es CAPICUA`)
+    }
+
+
+} */
+
+
+
+
+
+
+
+/* const capicuaNumb = (num = 0) => {
+    if (!num) return console.warn("No ingresaste un número");
+    if (typeof num !== 'number') return console.error("El valor ingresado no es un número");
+
+    num = num.toString();
+    let reverseNum = num.split("").reverse().join("")
+
+    return ((num) === reverseNum)
+        ? console.log(`Si es capicua ${num} y ${reverseNum}`)
+        : console.log(`No es capicua ${num} y ${reverseNum}`)
+} */
+
+
+
+
+
+
+
+
+
+// 11 ----------------------------------------------------------------------------------------------------------------------------------
+/* const factorialNumb = (numb) => {
+    let factorial = 1
+    if (typeof numb !== 'number' || numb === undefined) {
+        console.warn("Ingresa un tipo de dato numerico");
+    } else {
+        for (let i = 1; i <= numb; i++) {
+            factorial *= i
+        }
+        console.log(factorial)
+    }
+}
+ */
+
+
+
+
+
+
+
+
+
+
+/* const factorial = (num = undefined) => {
+    if (num === undefined) return console.warn("No ingresaste un número");
+
+    if (typeof num !== 'number') return console.error("Debes ingresar un numero")
+
+    if (num === 0) return console.error("no puedes ingresar 0")
+
+    if (Math.sign(num) === -1) return console.error("No puedes ingresar un número negativo")
+
+    let factorial = 1;
+
+    for (let i = num; i > 1; i--) {
+        factorial *= i
+    }
+
+    return console.log(`El factorial de ${num} es ${factorial}`)
+} */
+
+
+
+
+
+
+
