@@ -471,3 +471,81 @@ convertirGrados(0, 'F') */
 
 
 
+
+
+// ----------------------------------------------------------------------------------------------------------------------------------
+
+/*
+15) Programa una función para convertir números de base binaria a decimal y viceversa, pe. miFuncion(100,2) devolverá 4 base 10.
+16) Programa una función que devuelva el monto final después de aplicar un descuento a una cantidad dada, pe. miFuncion(1000, 20) devolverá 800.
+17) Programa una función que dada una fecha válida determine cuantos años han pasado hasta el día de hoy, pe. miFuncion(new Date(1984,4,23)) devolverá 35 años (en 2020).
+*/
+
+// 15 ----------------------------------------------------------------------------------------------------------------------------------
+/* const convertiBinarioDecimal = (numero = undefined, base = undefined) => {
+    if (numero === undefined) return console.warn("No ingresaste el número a convertir ");
+
+    if (typeof numero !== 'number') return console.error(`El valor ${numero} ingresado, NO es un número`);
+
+    if (base === undefined) return console.warn('No ingresaste la base a convertir')
+
+    if (typeof base !== 'number') return console.error(`El valor ${base} ingresado, NO es un número`);
+
+
+    if (base === 2) {
+        return console.log(`${numero} base ${base} = ${parseInt(numero, base)} base 10 `)
+    } else if (base === 10) {
+        return console.log(`${numero} base ${base} = ${(numero.toString(2))} base 2 `)
+    } else {
+        return console.error("El tipo de base a convertir no es valido")
+    }
+} */
+
+
+
+
+
+
+
+// 16 ----------------------------------------------------------------------------------------------------------------------------------
+/* const montoDescuento = (monto, descuento = 0) => {
+    if (monto === undefined) return console.warn("Debes ingresas un numero")
+    if (typeof monto !== 'number') return console.warn("No puedes ingresar otro tipo de dato")
+    if (monto === 0) return console.error('No puedes ingresas 0')
+    if (monto < 0) return console.error('No puedes ingresas numero negativos')
+    if (descuento === undefined) return console.warn("Debes ingresas un numero")
+    if (typeof descuento !== 'number') return console.warn("No puedes ingresar otro tipo de dato")
+    if (descuento >= 100) return console.warn("No puedes tener un descuento del 100% o superior")
+    if (descuento < 0) return console.warn("No puede haber descuentos negativos")
+
+
+    return console.log(`$${monto} con un descuento de ${descuento}% = $${monto - (monto * (descuento / 100))}`)
+}
+
+montoDescuento(100, 10); */
+
+
+
+
+
+
+
+// 17 ----------------------------------------------------------------------------------------------------------------------------------
+/* const calcularAnios = (fecha = undefined) => {
+    if (fecha === undefined) return console.warn("No ingresaste fecha")
+    if (!(fecha instanceof Date)) return console.error("El valor que ingresaste no es una fecha válida")
+
+    let HoyMenosFecha = new Date().getTime() - fecha.getTime();
+    aniosEnMS = 1000 * 60 * 60 * 24 * 365;
+    aniosHumanos = Math.floor(HoyMenosFecha / aniosEnMS);
+
+    return (Math.sign(HoyMenosFecha) === -1)
+        ? console.log(`Faltan ${Math.abs(aniosHumanos)} años para el ${fecha.getFullYear()}.`)
+        : (Math.sign(aniosHumanos) === 1)
+            ? console.log(`Han pasado ${aniosHumanos} años, desde ${fecha.getFullYear()}.`)
+            : console.log("No hay diferencia, estamos en el mismo año.")
+}
+
+calcularAnios(new Date())
+calcularAnios(new Date(1989, 2, 28))
+calcularAnios(new Date(2084, 2, 28)) */
