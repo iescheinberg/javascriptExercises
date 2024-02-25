@@ -549,3 +549,337 @@ montoDescuento(100, 10); */
 calcularAnios(new Date())
 calcularAnios(new Date(1989, 2, 28))
 calcularAnios(new Date(2084, 2, 28)) */
+
+
+
+
+
+
+// ----------------------------------------------------------------------------------------------------------------------------------
+/*
+18) Programa una función que dada una cadena de texto cuente el número de vocales y consonantes, pe. miFuncion("Hola Mundo") devuelva Vocales: 4, Consonantes: 5.
+19) Programa una función que valide que un texto sea un nombre válido, pe. miFuncion("Jonathan MirCha") devolverá verdadero.
+20) Programa una función que valide que un texto sea un email válido, pe. miFuncion("jonmircha@gmail.com") devolverá verdadero.
+*/
+
+// 18 ----------------------------------------------------------------------------------------------------------------------------------
+/* const VowelAndConsonantCounter = (word) => {
+
+    let vowelCount = 0,
+        consonantCount = 0;
+
+    if (word === undefined) return console.warn('Debe ingresar una palabra')
+    if (typeof word !== 'string') return console.warn('Debe ingresar una cadena de texto')
+    if (word === '') return console.warn('Debe ingresar al menos 1 caracter')
+
+    word = word.toLowerCase();
+
+    for (let i = 0; i < word.length; i++) {
+        let char = word[i];
+
+        if (char.match(/[a-z]/)) {
+            if (char.match(/[aeiou]/)) {
+                vowelCount++
+            } else {
+                consonantCount++
+            }
+        }
+    }
+    return console.log(`Plabra: ${word} - Vocales: ${vowelCount} - Consosnantes: ${consonantCount}`);
+}
+ */
+
+
+/* const contarLetras = (cadena = "") => {
+    if (!cadena) return console.warn("No ingresaste una cadena de texto");
+
+    if (typeof cadena !== 'string') return console.warn(`El valor ${cadena} No es una cadena de texto`);
+
+    cadena = cadena.toLowerCase();
+
+    let vocales = 0,
+        consonantes = 0;
+
+    for (let letra of cadena) {
+        if (/[aeiouáéíóú]/.test(letra)) {
+            vocales++
+        }
+
+        if (/[bcdfghjklmnñpqrstvwxyz]/.test(letra)) {
+            consonantes++
+        }
+    }
+
+    return console.info({
+        cadena,
+        vocales,
+        consonantes
+    })
+} */
+
+
+
+
+
+
+
+// 19 ----------------------------------------------------------------------------------------------------------------------------------
+/* const textValidator = (text) => {
+    if (text === undefined) console.warn("Ingrese al menos un texto")
+    if (typeof text !== 'string') console.warn("Ingrese una cadena de texto")
+
+
+    let regularExp = /^[A-Z][a-z]+(\s[A-Z][a-z]+)+$/;
+
+    return console.log(regularExp.test(text));
+} */
+
+
+
+
+
+
+
+/* const validarNombre = (nombre) => {
+    if (!nombre) return console.warn("No ingresaste una cadena de texto");
+
+    if (typeof nombre !== 'string') return console.warn(`El valor ${nombre} No es una cadena de texto`);
+
+    let expReg = /^[A-Za-zÑñÁáÉéÍíÓóÚú\s]+$/g.test(nombre);
+
+    return (expReg)
+        ? console.info(`${nombre} es un nombre VÁLIDO`)
+        : console.info(`${nombre} NO es un nombre VÁLIDO`)
+} */
+
+
+
+
+
+
+
+
+// 20 ----------------------------------------------------------------------------------------------------------------------------------
+
+/* const mailValidator = (mail) => {
+    if (mail === undefined) console.warn("Ingrese al menos un texto")
+    if (typeof mail !== 'string') console.warn("Ingrese una cadena de texto")
+
+
+    let regularExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    return (regularExp.test(mail))
+        ? console.log(`${mail} es VALIDO`)
+        : console.log(`${mail} es INVALIDO`);
+} */
+
+
+
+
+
+
+
+/* const validarEmail = (email = "") => {
+    if (!email) return console.warn("No ingresaste un email");
+
+    if (typeof email !== 'string') return console.warn(`El valor ${email} No es una cadena de texto`);
+
+    let expReg = /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i.test(email);
+
+    return (expReg)
+        ? console.info(`${email} es un email VÁLIDO`)
+        : console.warn(`${email} NO es un email VÁLIDO`)
+} */
+
+
+
+
+
+
+// 19 y 20 ----------------------------------------------------------------------------------------------------------------------------------
+/* const validarPatron = (cadena = "", patron = "") => {
+    if (!cadena) return console.warn("No ingresaste una cadena de texto a evaluar");
+
+    if (typeof cadena !== 'string') return console.warn(`El valor ${email} No es una cadena de texto`);
+
+    if (!patron) return console.warn("No ingresaste un patron a evaluar");
+
+    if (typeof patron !== 'string') return console.warn(`El valor ${patron} No es una cadena de texto`);
+
+    let expReg = patron.test(cadena)
+
+    return (expReg)
+        ? console.info(`${cadena} es un patron VÁLIDO`)
+        : console.warn(`${cadena} NO es un patron VÁLIDO`)
+}
+
+validarPatron('') */
+
+
+
+
+
+
+
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+/*
+21) Programa una función que dado un array numérico devuelve otro array con los números elevados al cuadrado, pe. mi_funcion([1, 4, 5]) devolverá [1, 16, 25].
+22) Programa una función que dado un array devuelva el número mas alto y el más bajo de dicho array, pe. miFuncion([1, 4, 5, 99, -60]) devolverá [99, -60].
+23) Programa una función que dado un array de números devuelva un objeto con 2 arreglos en el primero almacena los números pares y en el segundo los impares, pe. miFuncion([1,2,3,4,5,6,7,8,9,0]) devolverá {pares: [2,4,6,8,0], impares: [1,3,5,7,9]}.
+
+La expresión regular que uso para el email en este video /[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})/i
+*/
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+
+// 21 ----------------------------------------------------------------------------------------------------------------------------------
+/* const elevarCuadrado = (numeros) => {
+    if (!numeros || numeros.length === 0) {
+        return console.warn('El array esta vacío');
+    }
+
+    for (const numero of numeros) {
+        if (typeof numero !== 'number') {
+            return console.warn('El array debe contener solo numeros');
+        }
+    }
+
+    const cuadrados = [];
+
+    for (const numero of numeros) {
+        cuadrados.push(numero ** 2);
+    }
+
+    return console.log(cuadrados)
+}
+ */
+
+
+
+
+
+
+
+/* const devolverCuadrados = (arr = undefined) => {
+    if (arr === undefined) return console.warn('No ingresaste un arreglo de números');
+    if (!(arr instanceof Array)) return console.warn('El valor que ingresaste no es un arreglo');
+    if (!arr || arr.length === 0) return console.warn('El arreglo está vacío')
+
+    for (const num of arr) {
+        if (typeof num !== "number") {
+            return console.error(`El valor ${num} ingresado NO es un número`)
+        }
+    }
+
+    const newArr = arr.map(el => el * el)
+
+    return console.log(`Arreglo original: ${arr},\nArreglo elevado al cuadrado: ${newArr}`)
+} */
+
+
+
+
+
+
+
+
+
+// 22 ----------------------------------------------------------------------------------------------------------------------------------
+
+/* const masALtoMasBajo = (numeros) => {
+    if (!numeros || numeros.length === 0) {
+        return console.warn('El array esta vacío');
+    }
+
+    for (const numero of numeros) {
+        if (typeof numero !== 'number') {
+            return console.warn('El array debe contener solo numeros');
+        }
+    }
+
+    const masALto = Math.max(...numeros);
+    const masBajo = Math.min(...numeros);
+
+    return console.info(`Mas alto: ${masALto}. Mas bajo: ${masBajo}`)
+} */
+
+
+
+
+/* const arrayMinMax = (arr = undefined) => {
+    if (arr === undefined) return console.warn('No ingresaste un arreglo de números');
+    if (!(arr instanceof Array)) return console.warn('El valor que ingresaste no es un arreglo');
+    if (!arr || arr.length === 0) return console.warn('El arreglo está vacío')
+
+    for (const num of arr) {
+        if (typeof num !== "number") {
+            return console.error(`El valor ${num} ingresado NO es un número`)
+        }
+    }
+
+    return console.info(`Arreglo original: ${arr}\nValor mayor: ${Math.max(...arr)}\nValor menor: ${Math.min(...arr)}`)
+} */
+
+
+
+
+
+
+
+
+
+// 23 ----------------------------------------------------------------------------------------------------------------------------------
+
+/* const separarParesImpares = (numeros) => {
+    if (!numeros || numeros.length === 0) {
+        return console.warn('El array esta vacío');
+    }
+
+    for (const numero of numeros) {
+        if (typeof numero !== 'number') {
+            return console.warn('El array debe contener solo numeros');
+        }
+    }
+
+    let pares = [];
+    let impares = [];
+
+    for (const numero of numeros) {
+        if (numero % 2 === 0) {
+            pares.push(numero)
+        } else {
+            impares.push(numero)
+        }
+    }
+
+    return {
+        pares: pares,
+        impares: impares
+    };
+} */
+
+
+
+
+
+
+/* const separarParesImpares = (arr = undefined) => {
+    if (arr === undefined) return console.warn('No ingresaste un arreglo de números');
+    if (!(arr instanceof Array)) return console.warn('El valor que ingresaste no es un arreglo');
+    if (!arr || arr.length === 0) return console.warn('El arreglo está vacío')
+
+    for (const num of arr) {
+        if (typeof num !== "number") {
+            return console.error(`El valor ${num} ingresado NO es un número`)
+        }
+    }
+
+    return console.info({
+        pares: arr.filter(num => num % 2 === 0),
+        impares: arr.filter(num => num % 2 !== 0)
+    })
+} */
+
