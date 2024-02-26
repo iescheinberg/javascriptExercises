@@ -883,3 +883,195 @@ La expresión regular que uso para el email en este video /[a-z0-9]+(\.[_a-z0-9]
     })
 } */
 
+
+
+
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+/*
+24) Programa una función que dado un arreglo de números devuelva un objeto con dos arreglos, el primero tendrá los numeros ordenados en forma ascendente y el segundo de forma descendiente, pe. miFuncion([7, 5,7,8,6]) devolverá { asc: [5,6,7,7,8], desc: [8,7,7,6,5] }.
+25) Programa una función que dado un arreglo de elementos, elimine los duplicados, pe. miFuncion(["x", 10, "x", 2, "10", 10, true, true]) devolverá ["x", 10, 2, "10", true].
+26) Programa una función que dado un arreglo de números obtenga el promedio, pe. promedio([9,8,7,6,5,4,3,2,1,0]) devolverá 4.5.
+*/
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+
+// 24 ----------------------------------------------------------------------------------------------------------------------------------
+
+/* const sortNumbers = (arr) => {
+    if (arr === undefined) return console.warn('No ingresaste un arreglo de números');
+    if (!(arr instanceof Array)) return console.warn('El valor que ingresaste no es un arreglo');
+    if (!arr || arr.length === 0) return console.warn('El arreglo está vacío')
+
+    for (const num of arr) {
+        if (typeof num !== "number") {
+            return console.error(`El valor ${num} ingresado NO es un número`)
+        }
+    }
+
+
+    return console.log({
+        asc: arr.slice().sort(),
+        des: arr.slice().sort((a, b) => b - a)
+    })
+} */
+
+
+
+
+/* const ordenarArreglo = (arr) => {
+    if (arr === undefined) return console.warn('No ingresaste un arreglo de números');
+    if (!(arr instanceof Array)) return console.warn('El valor que ingresaste no es un arreglo');
+    if (!arr || arr.length === 0) return console.warn('El arreglo está vacío')
+
+    for (const num of arr) {
+        if (typeof num !== "number") {
+            return console.error(`El valor ${num} ingresado NO es un número`)
+        }
+    }
+
+    return console.info({
+        arr,
+        asc: arr.map(el => el).sort(),
+        desc: arr.map(el => el).sort().reverse()
+    })
+} */
+
+
+
+
+
+
+
+
+
+// 25 ----------------------------------------------------------------------------------------------------------------------------------
+
+/* const removeDuplicates = (arr) => {
+    if (arr === undefined) return console.warn('No ingresaste un arreglo de números');
+    if (!(arr instanceof Array)) return console.warn('El valor que ingresaste no es un arreglo');
+    if (!arr || arr.length === 0) return console.warn('El arreglo está vacío')
+
+
+    let newArr = arr.filter((num, index) => {
+        return arr.indexOf(num) === index;
+    });
+
+    return console.log(newArr);
+}
+
+removeDuplicates([1, 2, 3, 5, 4, 5, 3, 6, 2]) */
+
+
+
+/* const quitarDuplicados = (arr = undefined) => {
+    if (arr === undefined) return console.warn('No ingresaste un arreglo de números');
+    if (!(arr instanceof Array)) return console.warn('El valor que ingresaste no es un arreglo');
+    if (!arr || arr.length === 0) return console.warn('El arreglo está vacío')
+    if (arr.length === 1) return console.warn('El arreglo debe tener mas de un lemento')
+
+    //  return console.info({
+    //     original: arr,
+    //     sinDuplicados: arr.filter((value, index, self) => self.indexOf(value) === index)
+    // })
+
+
+
+
+    return console.info({
+        original: arr,
+        sinDuplicados: [...new Set(arr)]
+    })
+}
+ */
+
+
+
+
+
+// 26 ----------------------------------------------------------------------------------------------------------------------------------
+
+
+/* const averageNumbers = (arr) => {
+    if (arr === undefined) return console.warn('No ingresaste un arreglo de números');
+    if (!(arr instanceof Array)) return console.warn('El valor que ingresaste no es un arreglo');
+    if (!arr || arr.length === 0) return console.warn('El arreglo está vacío')
+
+    for (const num of arr) {
+        if (typeof num !== "number") {
+            return console.error(`El valor ${num} ingresado NO es un número`)
+        }
+    }
+
+
+
+    const sum = arr.reduce((acum, num) => {
+        return acum + num
+    }, 0);
+
+    return console.log(`Promedio = ${sum / arr.length}`)
+
+}
+ */
+
+
+
+const promedio = (arr = undefined) => {
+    if (arr === undefined) return console.warn('No ingresaste un arreglo de números');
+    if (!(arr instanceof Array)) return console.warn('El valor que ingresaste no es un arreglo');
+    if (!arr || arr.length === 0) return console.warn('El arreglo está vacío')
+
+    for (const num of arr) {
+        if (typeof num !== "number") {
+            return console.error(`El valor ${num} ingresado NO es un número`)
+        }
+    }
+
+    return console.info(
+        arr.reduce((total, num, index, arr) => {
+            total += num
+            if (index === arr.length - 1) {
+                return `El promedio de ${arr.join(" + ")} es ${total / arr.length}`
+            } else {
+                return total;
+            }
+        })
+    )
+}
+
+promedio([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])
+
+
+
+
+
+// ------------------------------------------------------------------------------------------------------------------------------------
+/*
+27) Programa una clase llamada Pelicula.
+
+    La clase recibirá un objeto al momento de instanciarse con los siguentes datos: id de la película en IMDB, titulo, director, año de estreno, país o países de origen, géneros y calificación en IMBD.
+    - Todos los datos del objeto son obligatorios.
+    - Valida que el id IMDB tenga 9 caracteres, los primeros 2 sean letras y los
+        7 restantes números.
+    - Valida que el título no rebase los 100 caracteres.
+    - Valida que el director no rebase los 50 caracteres.
+    - Valida que el año de estreno sea un número entero de 4 dígitos.
+    - Valida que el país o paises sea introducidos en forma de arreglo.
+    - Valida que los géneros sean introducidos en forma de arreglo.
+    - Valida que los géneros introducidos esten dentro de los géneros
+        aceptados*.
+    - Crea un método estático que devuelva los géneros aceptados*.
+    - Valida que la calificación sea un número entre 0 y 10 pudiendo ser
+        decimal de una posición.
+    - Crea un método que devuelva toda la ficha técnica de la película.
+    - Apartir de un arreglo con la información de 3 películas genera 3
+        instancias de la clase de forma automatizada e imprime la ficha técnica
+        de cada película.
+
+* Géneros Aceptados: Action, Adult, Adventure, Animation, Biography, Comedy, Crime, Documentary ,Drama, Family, Fantasy, Film Noir, Game-Show, History, Horror, Musical, Music, Mystery, News, Reality-TV, Romance, Sci-Fi, Short, Sport, Talk-Show, Thriller, War, Western.
+*/
+// ------------------------------------------------------------------------------------------------------------------------------------
+
+
